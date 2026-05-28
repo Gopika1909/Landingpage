@@ -1,0 +1,334 @@
+/* ======================================= */
+/* 1. MAIN LAYOUT                          */
+/* ======================================= */
+.solutionsContainer {
+  background-color: #050608;
+  color: white;
+  padding: 80px 10%;
+  display: flex;
+  gap: 80px; 
+  font-family: 'Inter', sans-serif;
+  align-items: flex-start;
+  overflow: hidden;
+  margin-top:-80px;
+}
+
+/* ======================================= */
+/* 2. LEFT HEADER / TEXT SECTION           */
+/* ======================================= */
+.headerSection {
+  flex: 1;
+  position: relative; 
+  top: 20px;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.btnPrimary {
+  background: transparent;
+  padding: 12px 25px;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ======================================= */
+/* 3. RIGHT GRID SECTION                   */
+/* ======================================= */
+.gridSection {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px; 
+}
+
+.card {
+  position: relative; 
+  padding: 20px 0;
+  border-bottom: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make sure text and buttons stack ABOVE the glowing background image */
+.cardHeader,
+.card h3,
+.card p,
+.learnMore {
+  position: relative; 
+  z-index: 1; 
+}
+
+/* ======================================= */
+/* 4. CARD ELEMENTS (Icons, tags, etc.)    */
+/* ======================================= */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  width: 100%;
+  margin-bottom: 20px; 
+}
+
+.solutionIcon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.tag {
+  font-size: 12px;
+  color: #717579; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.card h3 {
+  margin: 0 0 15px 0;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.card p {
+  color: #a0a0a0;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.learnMore {
+  color: #00B4FD;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: auto; 
+  width: fit-content;
+}
+
+/* THE CONDITIONAL ECLIPSE BACKGROUND */
+.cardBgImage {
+  position: absolute;
+  top: 50%; 
+  left: -30%;
+  transform: translate(-50%, -50%); 
+  width: 450%; 
+  height: auto;
+  object-fit: contain;
+  pointer-events: none; 
+  z-index: 0; 
+  opacity: 0.9;
+}
+
+
+/* ======================================= */
+/* 5. LARGE DESKTOP (1440px+)              */
+/* ======================================= */
+@media (min-width: 1440px) {
+  .solutionsContainer {
+    padding: 100px 12%;
+    gap: 100px;
+  }
+
+  .title {
+    font-size: 28px;
+    max-width: 560px;
+  }
+
+  .card h3 {
+    font-size: 24px;
+  }
+
+  .card p {
+    font-size: 15px;
+  }
+
+  .gridSection {
+    gap: 70px;
+  }
+}
+
+
+/* ======================================= */
+/* 6. TABLETS & SMALLER DESKTOPS (≤1024px) */
+/* ======================================= */
+@media (max-width: 1024px) {
+  .solutionsContainer {
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 5%;
+  }
+
+  .headerSection {
+    flex: auto;
+    top: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    max-width: 100%;
+    font-size: 26px;
+  }
+
+  .gridSection {
+    gap: 40px;
+  }
+}
+
+
+/* ======================================= */
+/* 7. PORTRAIT TABLETS (≤820px)            */
+/* ======================================= */
+@media (max-width: 820px) {
+  .solutionsContainer {
+    padding: 50px 5%;
+    gap: 35px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .gridSection {
+    gap: 30px;
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+}
+
+
+/* ======================================= */
+/* 8. MOBILE PHONES (≤768px)               */
+/* ======================================= */
+@media (max-width: 768px) {
+  .solutionsContainer {
+    padding: 40px 5%;
+    gap: 30px;
+  }
+
+  .gridSection {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .card {
+    padding: 16px 0;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+  .btnPrimary {
+    padding: 11px 22px;
+    font-size: 13px;
+  }
+
+  .cardBgImage {
+    left: 50%;
+    width: 250%; 
+  }
+}
+
+
+/* ======================================= */
+/* 9. SMALL PHONES (≤480px)                */
+/* ======================================= */
+@media (max-width: 480px) {
+  .solutionsContainer {
+    padding: 32px 16px;
+    gap: 24px;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .btnPrimary {
+    padding: 10px 20px;
+    font-size: 12px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .gridSection {
+    gap: 20px;
+  }
+
+  .card {
+    padding: 14px 0;
+  }
+
+  .solutionIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+
+  .learnMore {
+    font-size: 13px;
+  }
+
+  .tag {
+    font-size: 11px;
+  }
+
+  .cardBgImage {
+    width: 220%;
+    opacity: 0.7;
+  }
+}
+
+
+/* ======================================= */
+/* 10. VERY SMALL PHONES (≤360px)          */
+/* ======================================= */
+@media (max-width: 360px) {
+  .solutionsContainer {
+    padding: 24px 12px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .card h3 {
+    font-size: 15px;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+
+  .cardBgImage {
+    width: 200%;
+  }
+}
