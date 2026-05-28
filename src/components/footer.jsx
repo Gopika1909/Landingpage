@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles/footer.module.css';
-import n7Logo from '../assets/mask.png';
+import n7Logo from '../assets/Mask.png';
 import ellipseImg from '../assets/Ellipse.png';
 
 const Footer = () => {
